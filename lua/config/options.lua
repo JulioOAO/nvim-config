@@ -20,3 +20,6 @@ vim.cmd('filetype plugin indent on')
 -- Neovim's Theme
 require('catppuccin').setup()
 vim.cmd.colorscheme 'catppuccin'
+
+-- LSP Configurations
+vim.diagnostic.config({ virtual_text = true })
