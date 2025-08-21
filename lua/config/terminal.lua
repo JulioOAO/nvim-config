@@ -1,3 +1,4 @@
+-- https://github.com/3BD-R/nvim/blob/041b8c018863c2460ca9e1e108f3bd8c376d73d0/lua/basic/term.lua
 local te_buf = nil
 local te_win_id = nil
 
