@@ -8,6 +8,12 @@ map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Keybindings for resizing windows
+map('n', '<C-Up>', '<C-w>+', { desc = 'Increase window height' })
+map('n', '<C-Down>', '<C-w>-', { desc = 'Decrease window height' })
+map('n', '<C-Right>', '<C-w>>', { desc = 'Increase window width' })
+map('n', '<C-Left>', '<C-w><lt>', { desc = 'Decrease window width' })
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
