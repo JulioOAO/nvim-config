@@ -8,4 +8,3 @@ require('config.lazy') -- Load before 'config.options' because catpuccin is call
 require('config.options')
 require('config.keymaps')
 require('config.autocmds')
-require('config.lsp')

@@ -22,9 +22,15 @@ require('utils.terminal')
 map({ 'n', 't' }, '<A-t>', ToggleTerminal, { desc = '[T]oggle terminal window' })
 map('t', '<Esc>', '<C-\\><C-n>', { desc = '[T]erminal: Exit insert mode' })
 
+-- Neotree keymaps
 map('n', '<leader>e', '<cmd>Neotree filesystem reveal toggle<CR>', { desc = 'Toggle Neotree' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+-- Tabs keymaps
 map('n', '<C-t>', '<cmd>tabnew<CR>', { desc = 'Open New [T]ab' })
+
+-- File editing keymaps
+map('n', '<C-s>', '<cmd>w<CR>', { desc = '[S]ave file in buffer' })
+map('n', '<C-S>', '<cmd>wa<CR>', { desc = '[S]ave [A]ll files in buffers' })
