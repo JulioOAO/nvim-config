@@ -12,7 +12,7 @@ map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Terminal keymaps
-require('config.terminal')
+require('utils.terminal')
 map({ 'n', 't' }, '<A-t>', ToggleTerminal, { desc = '[T]oggle terminal window' })
 map('t', '<Esc>', '<C-\\><C-n>', { desc = '[T]erminal: Exit insert mode' })
 
