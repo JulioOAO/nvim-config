@@ -1,3 +1,5 @@
+# https://github.com/github/gitignore/blob/e5379849ade0efbda2b3dc5a07afd6472b90d47b/Lua.gitignore
+
 # Compiled Lua sources
 luac.out
 
