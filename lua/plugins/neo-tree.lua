@@ -7,10 +7,6 @@ return {
             "MunifTanjim/nui.nvim",
             "nvim-tree/nvim-web-devicons",
         },
-        config = function()
-            require("neo-tree.sources.filesystem.commands").refresh(require("neo-tree.sources.manager").get_state(
-            "filesystem"))
-        end
     },
     {
         "antosha417/nvim-lsp-file-operations",
