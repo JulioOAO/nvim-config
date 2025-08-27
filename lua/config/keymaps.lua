@@ -53,7 +53,7 @@ map('n', '<leader>hp', '<cmd>Gitsigns nav_hunk prev<CR>', { desc = 'Gitsigns: na
 map('n', '<leader>hq', '<cmd>Gitsigns setloclist<CR>', { desc = 'Gitsigns: Show [h]unk location list' })
 
 -- Gitsigns: blame
-map('n', '<leader>gB', '<cmd>Gitsigns blame<CR>', { desc = 'Gitsigns: [b]lame' })
+map('n', '<leader>gB', '<cmd>Gitsigns blame<CR>', { desc = 'Gitsigns: [B]lame' })
 map('n', '<leader>gb', '<cmd>Gitsigns blame_line<CR>', { desc = 'Gitsigns: [b]lame line' })
 map('n', '<leader>gt', '<cmd>Gitsigns toggle_current_line_blame<CR>',
     { desc = 'Gitsigns: [t]oggle current line blame' })

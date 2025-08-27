@@ -22,4 +22,4 @@ require('catppuccin').setup()
 vim.cmd.colorscheme 'catppuccin'
 
 -- LSP Configurations
-vim.diagnostic.config({ virtual_text = true })
+vim.diagnostic.config({ virtual_lines = true })
