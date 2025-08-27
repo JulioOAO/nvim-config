@@ -1,13 +1,12 @@
 local map = vim.keymap.set
 
--- Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
+-- Split navigation
 map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- Navigation between buffers
+-- Buffer navigation
 map('n', '<A-h>', '<cmd>bprev<CR>', { desc = 'Move to the previous buffer' })
 map('n', '<A-l>', '<cmd>bnext<CR>', { desc = 'Move to the previous buffer' })
 
@@ -71,5 +70,9 @@ map('n', '<leader>ff', builtin.find_files, { desc = 'Telescope: find [f]iles' })
 map('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope: live [g]rep' })
 map('n', '<leader>fb', builtin.buffers, { desc = 'Telescope: [b]uffers' })
 map('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope: [h]elp tags' })
-map('n', '<leader>fc', builtin.git_commit, { desc = 'Telescope: git [c]ommits' })
+map('n', '<leader>fc', builtin.git_commits, { desc = 'Telescope: git [c]ommits' })
 map('n', '<leader>fs', builtin.git_status, { desc = 'Telescope: git [s]tatus' })
+map('n', '<leader>fB', builtin.git_branches, { desc = 'Telescope: [g]it [B]ranches' })
+map('n', '<leader>fn', function()
+    builtin.find_files { cwd = vim.fn.stdpath 'config' }
+end, { desc = '[S]earch [N]eovim files' })
