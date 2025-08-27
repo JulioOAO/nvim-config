@@ -9,6 +9,7 @@ return {
             ensure_installed = { 'c', 'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline' },
             sync_install = true,
             auto_install = true,
+            -- ignore_install = {},
             highlight = {
                 enable = true,
                 additional_vim_regex_highlighting = false,
@@ -49,7 +50,7 @@ return {
                     -- mapping query_strings to modes.
                     selection_modes = {
                         ['@parameter.outer'] = 'v', -- charwise
-                        ['@function.outer'] = 'V', -- linewise
+                        ['@function.outer'] = 'V',  -- linewise
                         ['@class.outer'] = '<c-v>', -- blockwise
                     },
                     -- If you set this to `true` (default is `false`) then any textobject is

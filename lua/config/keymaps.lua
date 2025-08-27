@@ -1,5 +1,4 @@
 local map = vim.keymap.set
--- local opts = { noremap = true, silent = true }
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -65,3 +64,12 @@ map('n', '<leader>gB', '<cmd>Gitsigns blame<CR>', { desc = 'Gitsigns: [B]lame' }
 map('n', '<leader>gb', '<cmd>Gitsigns blame_line<CR>', { desc = 'Gitsigns: [b]lame line' })
 map('n', '<leader>gt', '<cmd>Gitsigns toggle_current_line_blame<CR>',
     { desc = 'Gitsigns: [t]oggle current line blame' })
+
+-- Telescope
+local builtin = require('telescope.builtin')
+map('n', '<leader>ff', builtin.find_files, { desc = 'Telescope: find [f]iles' })
+map('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope: live [g]rep' })
+map('n', '<leader>fb', builtin.buffers, { desc = 'Telescope: [b]uffers' })
+map('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope: [h]elp tags' })
+map('n', '<leader>fc', builtin.git_commit, { desc = 'Telescope: git [c]ommits' })
+map('n', '<leader>fs', builtin.git_status, { desc = 'Telescope: git [s]tatus' })
