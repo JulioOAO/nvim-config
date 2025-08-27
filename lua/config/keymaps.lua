@@ -42,6 +42,14 @@ map('n', '<C-t>', '<cmd>tabnew<CR>', { desc = 'Open New [T]ab' })
 map('n', '<C-s>', '<cmd>w<CR>', { desc = '[S]ave file in buffer' })
 map('n', '<C-S>', '<cmd>wa<CR>', { desc = '[S]ave [A]ll files in buffers' })
 
+-- Move lines
+map("n", "<A-j>", ":m .+1<cr>==")
+map("n", "<A-k>", ":m .-2<cr>==")
+map("i", "<A-j>", "<Esc>:m .+1<cr>==gi")
+map("i", "<A-k>", "<Esc>:m .-2<cr>==gi")
+map("x", "<A-j>", ":m '>+1<cr>gv=gv")
+map("x", "<A-k>", ":m '<-2<cr>gv=gv")
+
 -- Gitsigns: hunk manipulation
 map('v', '<leader>hs', '<cmd>Gitsigns stage_hunk<CR>', { desc = 'Gitsigns: [s]tage [h]unk' })
 map('v', '<leader>hu', '<cmd>Gitsigns unstage_hunk<CR>', { desc = 'Gitsigns: [u]nstage [h]unk' })
