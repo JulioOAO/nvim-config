@@ -11,6 +11,7 @@ vim.opt.termguicolors = true  -- Enable 24-bit RGB colors
 vim.opt.mouse = 'a'           -- Can be useful for resizing splits
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.splitbelow = true
+vim.opt.splitright = true
 vim.g.have_nerd_font = true
 
 -- Syntax highlighting and filetype plugins

@@ -1,19 +1,23 @@
 local map = vim.keymap.set
 
--- Split navigation
+-- Buffers
+map('n', '<leader>bv', '<cmd>vsp<CR>', { desc = 'Buffer: split [v]ertically' })
+map('n', '<leader>bh', '<cmd>sp<CR>', { desc = 'Buffer: split [h]orizontally' })
+map('n', '<A-h>', '<cmd>bprev<CR>', { desc = 'Buffer: move to the previous one' })
+map('n', '<A-l>', '<cmd>bnext<CR>', { desc = 'Buffer: move to the next one' })
+
+-- Tabs
+map('n', '<leader>tn', '<cmd>tabnew<CR>', { desc = 'Tab: open [n]ew' })
+map('n', '<leader>tc', '<cmd>tabc<CR>', { desc = 'Tab: [c]lose current' })
+map('n', '<S-Tab>', 'gt', { desc = 'Tab: move to next one' })
+
+-- Windows
+map('n', '<leader>nv', '<cmd>vne<CR>', { desc = 'Windows: [n]ew [v]ertical window' })
+map('n', '<leader>nh', '<cmd>new<CR>', { desc = 'Windows: [n]ew [h]orizontal window' })
 map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-
--- Buffer navigation
-map('n', '<A-h>', '<cmd>bprev<CR>', { desc = 'Move to the previous buffer' })
-map('n', '<A-l>', '<cmd>bnext<CR>', { desc = 'Move to the previous buffer' })
-
--- Tab navigation
-map('n', '<S-Tab>', 'gt', { desc = 'Move to next [t]ab' })
-
--- Keybindings for resizing windows
 map('n', '<C-Up>', '<C-w>+', { desc = 'Increase window height' })
 map('n', '<C-Down>', '<C-w>-', { desc = 'Decrease window height' })
 map('n', '<C-Right>', '<C-w>>', { desc = 'Increase window width' })
@@ -22,21 +26,18 @@ map('n', '<C-Left>', '<C-w><lt>', { desc = 'Decrease window width' })
 -- Clear highlights on search when pressing <Esc> in normal mode
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
--- Terminal keymaps
+-- Terminal
 require('utils.terminal')
-map({ 'n', 't' }, '<A-t>', ToggleTerminal, { desc = '[T]oggle terminal window' })
-map('t', '<Esc>', '<C-\\><C-n>', { desc = '[T]erminal: Exit insert mode' })
+map({ 'n', 't' }, '<A-t>', ToggleTerminal, { desc = 'Terminal: [T]oggle window' })
+map('t', '<Esc>', '<C-\\><C-n>', { desc = 'Terminal: [E]xit insert mode' })
 
--- Neotree keymaps
+-- Neotree
 map('n', '<leader>e', '<cmd>Neotree filesystem reveal toggle<CR>', { desc = 'Toggle Neotree' })
 
--- Diagnostic keymaps
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+-- Diagnostic
+map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
--- Tabs keymaps
-map('n', '<C-t>', '<cmd>tabnew<CR>', { desc = 'Open New [T]ab' })
-
--- File editing keymaps
+-- File editing
 map('n', '<C-s>', '<cmd>w<CR>', { desc = '[S]ave file in buffer' })
 map('n', '<C-S>', '<cmd>wa<CR>', { desc = '[S]ave [A]ll files in buffers' })
 
@@ -76,3 +77,11 @@ map('n', '<leader>fB', builtin.git_branches, { desc = 'Telescope: [g]it [B]ranch
 map('n', '<leader>fn', function()
     builtin.find_files { cwd = vim.fn.stdpath 'config' }
 end, { desc = '[S]earch [N]eovim files' })
+
+-- Nvim-dap
+local dap = require('dap')
+map('n', '<leader>dt', dap.toggle_breakpoint, { desc = 'Debug: [t]oggle breakpoint' })
+map('n', '<leader>dc', dap.continue, { desc = 'Debug: [c]ontinue' })
+map('n', '<leader>do', dap.step_over, { desc = 'Debug: step [o]ver' })
+map('n', '<leader>di', dap.step_into, { desc = 'Debug: step [i]nto' })
+map('n', '<leader>du', dap.step_out, { desc = 'Debug: step o[u]t' })
