@@ -37,5 +37,10 @@ return {
 			python = { "isort", "black" },
 			toml = { "taplo" },
 		},
+		formatters = {
+			isort = {
+				timeout_ms = 5000,
+			},
+		},
 	},
 }
