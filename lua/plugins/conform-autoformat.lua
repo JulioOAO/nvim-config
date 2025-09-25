@@ -11,7 +11,7 @@ return {
 			-- Arreglo #2: Estructura explícita para el atajo de teclado,
 			-- que aunque funcional, el linter estricto puede marcar.
 			-- Separar la configuración en `opts` es más limpio.
-			"<leader>bf",
+			"<leader>f",
 			function()
 				require("conform").format({ async = true, lsp_format = "fallback" })
 			end,
@@ -39,6 +39,9 @@ return {
 		},
 		formatters = {
 			isort = {
+				timeout_ms = 5000,
+			},
+			black = {
 				timeout_ms = 5000,
 			},
 		},
