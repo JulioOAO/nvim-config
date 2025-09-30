@@ -5,7 +5,9 @@ return {
 	-- example using `opts` for defining servers
 	opts = {
 		servers = {
-			pyright = {},
+			pyright = {
+				log_level = "debug",
+			},
 			lua_ls = {
 				settings = {
 					Lua = {

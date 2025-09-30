@@ -27,7 +27,7 @@ return {
 				return nil
 			else
 				return {
-					timeout_ms = 500,
+					timeout_ms = 1000,
 					lsp_format = "fallback",
 				}
 			end
@@ -36,14 +36,6 @@ return {
 			lua = { "stylua" },
 			python = { "isort", "black" },
 			toml = { "taplo" },
-		},
-		formatters = {
-			isort = {
-				timeout_ms = 5000,
-			},
-			black = {
-				timeout_ms = 5000,
-			},
 		},
 	},
 }
