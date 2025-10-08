@@ -1,16 +1,10 @@
--- lua/plugins/conform-autoformat.lua
 return {
-	-- Arreglo #1: El nombre del plugin se separa de la configuración.
 	"stevearc/conform.nvim",
 
-	-- El resto de la configuración va como claves de la tabla principal.
 	event = { "BufWritePre" },
 	cmd = { "ConformInfo" },
 	keys = {
 		{
-			-- Arreglo #2: Estructura explícita para el atajo de teclado,
-			-- que aunque funcional, el linter estricto puede marcar.
-			-- Separar la configuración en `opts` es más limpio.
 			"<leader>f",
 			function()
 				require("conform").format({ async = true, lsp_format = "fallback" })

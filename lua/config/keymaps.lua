@@ -10,10 +10,10 @@ map("n", "<leader>tc", "<cmd>tabc<CR>", { desc = "Tab: [c]lose current" })
 map("n", "<S-Tab>", "gt", { desc = "Tab: move to next one" })
 
 -- Windows
-map("n", "<leader>nv", "<cmd>vne<CR>", { desc = "Windows: [n]ew [v]ertical window" })
-map("n", "<leader>nh", "<cmd>new<CR>", { desc = "Windows: [n]ew [h]orizontal window" })
-map("n", "<leader>sv", "<cmd>vsp<CR>", { desc = "Windows: [s]plit [v]ertically" })
-map("n", "<leader>sh", "<cmd>sp<CR>", { desc = "Windows: [s]plit [h]orizontally" })
+map("n", "<leader>wv", "<cmd>vne<CR>", { desc = "Windows: [n]ew [v]ertical window" })
+map("n", "<leader>wh", "<cmd>new<CR>", { desc = "Windows: [n]ew [h]orizontal window" })
+map("n", "<leader>wV", "<cmd>vsp<CR>", { desc = "Windows: [s]plit [v]ertically" })
+map("n", "<leader>wH", "<cmd>sp<CR>", { desc = "Windows: [s]plit [h]orizontally" })
 map("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 map("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 map("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
@@ -38,8 +38,8 @@ map("n", "<leader>e", "<cmd>Neotree filesystem reveal toggle<CR>", { desc = "Tog
 map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
 -- File editing
-map("n", "<C-s>", "<cmd>w<CR>", { desc = "[S]ave file in buffer" })
-map("n", "<C-S>", "<cmd>wa<CR>", { desc = "[S]ave [A]ll files in buffers" })
+map("n", "<leader>s", "<cmd>w | lua print('Single file saved')<CR>", { desc = "[S]ave file in buffer" })
+map("n", "<leader>a", "<cmd>wa | lua print('All files saved')<CR>", { desc = "[S]ave [A]ll files in buffers" })
 
 -- Move lines
 map("n", "<A-j>", ":m .+1<cr>==")
