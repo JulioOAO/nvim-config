@@ -38,8 +38,8 @@ map("n", "<leader>e", "<cmd>Neotree filesystem reveal toggle<CR>", { desc = "Tog
 map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
 -- File editing
-map("n", "<leader>s", "<cmd>w | lua print('Single file saved')<CR>", { desc = "[S]ave file in buffer" })
-map("n", "<leader>a", "<cmd>wa | lua print('All files saved')<CR>", { desc = "[S]ave [A]ll files in buffers" })
+map("n", "<leader>s", "<cmd>w<CR>", { desc = "[S]ave file in buffer" })
+map("n", "<leader>a", "<cmd>wa<CR>", { desc = "[S]ave [A]ll files in buffers" })
 
 -- Move lines
 map("n", "<A-j>", ":m .+1<cr>==")
