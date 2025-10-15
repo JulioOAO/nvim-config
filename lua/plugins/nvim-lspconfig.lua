@@ -39,14 +39,25 @@ return {
 				".git",
 			},
 			settings = {
+				pyright = {
+					disableOrganizeImports = true,
+				},
 				python = {
 					analysis = {
 						diagnosticMode = "openFilesOnly",
 						useLibraryCodeForTypes = true,
+						ignore = { "*" },
 					},
 				},
 			},
 		}
-		vim.lsp.enable({ "luals", "pyright" })
+		vim.lsp.config["ruff"] = {
+			init_options = {
+				settings = {
+					logLevel = "debug",
+				},
+			},
+		}
+		vim.lsp.enable({ "luals", "pyright", "ruff" })
 	end,
 }

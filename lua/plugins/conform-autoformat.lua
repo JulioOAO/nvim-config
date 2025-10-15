@@ -21,14 +21,14 @@ return {
 				return nil
 			else
 				return {
-					timeout_ms = 1000,
+					timeout_ms = 5000,
 					lsp_format = "fallback",
 				}
 			end
 		end,
 		formatters_by_ft = {
 			lua = { "stylua" },
-			python = { "isort", "black" },
+			python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
 			toml = { "taplo" },
 		},
 	},
