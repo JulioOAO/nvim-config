@@ -1,8 +1,7 @@
 local map = vim.keymap.set
 
 -- Buffers
-map("n", "<A-h>", "<cmd>bprev<CR>", { desc = "Buffer: move to the previous one" })
-map("n", "<A-l>", "<cmd>bnext<CR>", { desc = "Buffer: move to the next one" })
+map("n", "<leader>b", "<cmd>ls<CR>:b<space>")
 
 -- Tabs
 map("n", "<leader>tn", "<cmd>tabnew<CR>", { desc = "Tab: open [n]ew" })
