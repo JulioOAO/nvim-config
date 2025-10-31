@@ -5,7 +5,8 @@ return {
 		"nvim-neotest/nvim-nio",
 	},
 	config = function()
-		local dap, dapui = require("dap"), require("dapui")
+		local dap = require("dap")
+		local dapui = require("dapui")
 		local project = require("utils.py_root_helper")
 		dapui.setup()
 		dap.set_log_level("TRACE")
@@ -43,6 +44,28 @@ return {
 					end
 				end,
 				console = "internalConsole",
+				pythonPath = get_venv_python_path,
+			},
+			{
+				type = "python",
+				request = "launch",
+				name = "Debug pytest (test under cursor)",
+				module = "pytest",
+				args = function()
+					local test_name = vim.fn.expand("<cword>")
+					local k_filter = vim.fn.input("Pytest filter: -k: ", test_name)
+					if k_filter == "" then
+						print("DAP launch aborted. There was not -k filter.")
+						return nil
+					end
+					return {
+						"-v",
+						"-k",
+						k_filter,
+						"${file}",
+					}
+				end,
+				console = "integratedTerminal",
 				pythonPath = get_venv_python_path,
 			},
 		}
