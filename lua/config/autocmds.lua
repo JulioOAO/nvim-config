@@ -29,3 +29,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 	desc = "LSP: Disable hover capability from Ruff",
 })
+-- Refrescar Neo-tree git status al ganar foco o cerrar terminales
+vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
+	desc = "Actualizar estado git de Neo-tree al cambiar de contexto",
+	group = vim.api.nvim_create_augroup("NeoTreeGitRefresh", { clear = true }),
+	callback = function()
+		-- Intentamos cargar el módulo de git_status
+		local success, git_status = pcall(require, "neo-tree.sources.git_status")
+
+		-- Solo ejecutamos el refresh si el módulo se cargó correctamente
+		if success then
+			git_status.refresh()
+		end
+	end,
+})
