@@ -1,8 +1,5 @@
 local map = vim.keymap.set
 
--- Buffers
-map("n", "<leader>b", "<cmd>ls<CR>:b<space>")
-
 -- Tabs
 map("n", "<leader>tn", "<cmd>tabnew<CR>", { desc = "Tab: open [n]ew" })
 map("n", "<leader>tc", "<cmd>tabc<CR>", { desc = "Tab: [c]lose current" })
@@ -84,6 +81,8 @@ end, { desc = "[S]earch [N]eovim files" })
 
 -- Nvim-dap
 local dap = require("dap")
+local dapui = require("dapui")
+map("n", "<leader>dd", dapui.toggle, { desc = "Debug: toggle [d]apui" })
 map("n", "<leader>dt", dap.toggle_breakpoint, { desc = "Debug: [t]oggle breakpoint" })
 map("n", "<leader>dc", dap.continue, { desc = "Debug: [c]ontinue" })
 map("n", "<leader>do", dap.step_over, { desc = "Debug: step [o]ver" })

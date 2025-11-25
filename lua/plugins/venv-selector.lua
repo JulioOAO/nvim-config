@@ -30,7 +30,7 @@ return {
 						return ""
 					end
 
-					local output = "enviroment: " .. venv_name
+					local output = "env: " .. venv_name
 					return output
 				end,
 			},

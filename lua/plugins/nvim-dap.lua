@@ -15,11 +15,15 @@ return {
 			local venv_python = project.detect_venv_python(file)
 			return venv_python or "python"
 		end
-		dap.adapters.python = {
-			type = "executable",
-			command = vim.fn.exepath("python"),
-			args = { "-m", "debugpy.adapter" },
-		}
+		dap.adapters.python = function(callback, config)
+			local venv_python = get_venv_python_path()
+			print("Using Python adapter in:", venv_python)
+			callback({
+				type = "executable",
+				command = venv_python,
+				args = { "-m", "debugpy.adapter" },
+			})
+		end
 		dap.configurations.python = {
 			{
 				type = "python",
@@ -66,6 +70,16 @@ return {
 					}
 				end,
 				console = "integratedTerminal",
+				pythonPath = get_venv_python_path,
+			},
+			{
+				name = "Attach to debugpy",
+				type = "python",
+				request = "attach",
+				connect = {
+					host = "127.0.0.1",
+					port = 5678,
+				},
 				pythonPath = get_venv_python_path,
 			},
 		}
