@@ -14,7 +14,7 @@ vim.opt.winborder = "single" -- Add border to hoover windows
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.g.have_nerd_font = true
-
+vim.opt.inccommand = "split" -- o "nosplit"
 -- Syntax highlighting and filetype plugins
 vim.cmd("syntax enable")
 vim.cmd("filetype plugin indent on")

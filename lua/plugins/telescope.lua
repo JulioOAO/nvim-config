@@ -3,14 +3,21 @@ return {
 	tag = "0.1.8",
 	dependencies = { "nvim-lua/plenary.nvim" },
 	opts = {
+		defaults = {
+			layout_config = {
+				horizontal = {
+					preview_width = 0.5,
+				},
+			},
+		},
 		pickers = {
 			buffers = {
 				mappings = {
 					i = {
-						["<C-d>"] = require("telescope.actions").delete_buffer,
+						["<A-d>"] = require("telescope.actions").delete_buffer,
 					},
 					n = {
-						["<C-d>"] = require("telescope.actions").delete_buffer,
+						["<A-d>"] = require("telescope.actions").delete_buffer,
 					},
 				},
 			},
