@@ -51,13 +51,6 @@ return {
 				},
 			},
 		}
-		vim.lsp.config["ruff"] = {
-			init_options = {
-				settings = {
-					logLevel = "debug",
-				},
-			},
-		}
 		vim.lsp.enable({ "luals", "pyright", "ruff" })
 	end,
 }
