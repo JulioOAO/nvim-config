@@ -74,10 +74,10 @@ map("n", "<leader>fh", builtin.help_tags, { desc = "Telescope: [h]elp tags" })
 map("n", "<leader>fk", builtin.keymaps, { desc = "Telescope: List normal mode [k]eymaps" })
 map("n", "<leader>fc", builtin.git_commits, { desc = "Telescope: git [c]ommits" })
 map("n", "<leader>fs", builtin.git_status, { desc = "Telescope: git [s]tatus" })
-map("n", "<leader>fB", builtin.git_branches, { desc = "Telescope: [g]it [B]ranches" })
+map("n", "<leader>fB", builtin.git_branches, { desc = "Telescope: git [B]ranches" })
 map("n", "<leader>fn", function()
 	builtin.find_files({ cwd = vim.fn.stdpath("config") })
-end, { desc = "[S]earch [N]eovim files" })
+end, { desc = "Search [N]eovim files" })
 
 -- Nvim-dap
 local dap = require("dap")
