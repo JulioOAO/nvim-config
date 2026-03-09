@@ -30,6 +30,8 @@ return {
 			lua = { "stylua" },
 			python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
 			toml = { "taplo" },
+			sql = { "sqlfluff" },
+			pgsql = { "sqlfluff" },
 		},
 	},
 }
