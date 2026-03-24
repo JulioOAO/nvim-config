@@ -3,7 +3,6 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	opts = {
 		options = {
-			theme = "catppuccin",
 			globalstatus = true,
 		},
 		sections = {
@@ -11,7 +10,7 @@ return {
 			lualine_b = { "branch", "diff", "diagnostics" },
 			lualine_c = { "filename" },
 			lualine_x = {
-				"venv-selector", -- You can customize the look of the output, see below`.
+				"venv-selector",
 				"encoding",
 				"fileformat",
 				"filetype",
