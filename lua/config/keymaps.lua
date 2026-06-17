@@ -1,7 +1,7 @@
 local map = vim.keymap.set
 
 -- Tabs
-map("n", "<leader>tn", "<cmd>tabnew<CR>", { desc = "Tab: open [n]ew" })
+map("n", "<leader>tN", "<cmd>tabnew<CR>", { desc = "Tab: open [n]ew" })
 map("n", "<leader>tc", "<cmd>tabc<CR>", { desc = "Tab: [c]lose current" })
 map("n", "<S-Tab>", "gt", { desc = "Tab: move to next one" })
 
@@ -95,3 +95,21 @@ end, { desc = "Debug: [h]over information" })
 map({ "n", "v" }, "<leader>dp", function()
 	require("dap.ui.widgets").preview()
 end, { desc = "Debug: [p]review variable values" })
+
+-- Neotest
+local neotest = require("neotest")
+map("n", "<leader>tr", neotest.run.run, { desc = "Neotest: run [n]earest [t]est" })
+map(
+	"n",
+	"<leader>tf",
+	"<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>",
+	{ desc = "Neotest: run current [f]ile" }
+)
+map(
+	"n",
+	"<leader>tw",
+	"<cmd>lua require('neotest').watch.toggle(vim.fn.expand('%'))<CR>",
+	{ desc = "Neotest: toggle [w]atch" }
+)
+map("n", "<leader>ts", "<cmd>Neotest summary<CR>", { desc = "Neotest: [s]ummary" })
+map("n", "<leader>to", "<cmd>Neotest output<CR>", { desc = "Neotest: [o]utput" })
