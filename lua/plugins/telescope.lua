@@ -1,7 +1,11 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	tag = "0.1.8",
-	dependencies = { "nvim-lua/plenary.nvim" },
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"BurntSushi/ripgrep",
+		{ "nvim-telescope/telescope-fzf-native.nvim", build = "cmake" },
+	},
 	opts = {
 		defaults = {
 			layout_config = {
@@ -23,6 +27,9 @@ return {
 					},
 				},
 			},
+		},
+		extensions = {
+			fzf = {},
 		},
 	},
 }

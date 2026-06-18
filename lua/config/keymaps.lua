@@ -69,6 +69,7 @@ map(
 local builtin = require("telescope.builtin")
 map("n", "<leader>ff", builtin.find_files, { desc = "Telescope: find [f]iles" })
 map("n", "<leader>fg", builtin.live_grep, { desc = "Telescope: live [g]rep" })
+map("n", "<leader>fw", builtin.grep_string, { desc = "Telescope: grep [w]ord" })
 map("n", "<leader>fb", builtin.buffers, { desc = "Telescope: [b]uffers" })
 map("n", "<leader>fh", builtin.help_tags, { desc = "Telescope: [h]elp tags" })
 map("n", "<leader>fk", builtin.keymaps, { desc = "Telescope: List normal mode [k]eymaps" })
