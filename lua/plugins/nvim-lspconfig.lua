@@ -4,6 +4,7 @@ return {
 		"Saghen/blink.cmp",
 	},
 	config = function()
+		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		vim.lsp.config["luals"] = {
 			cmd = { "lua-language-server" },
 			filetypes = { "lua" },
