@@ -99,7 +99,7 @@ end, { desc = "Debug: [p]review variable values" })
 
 -- Neotest
 local neotest = require("neotest")
-map("n", "<leader>tr", neotest.run.run, { desc = "Neotest: run [n]earest [t]est" })
+map("n", "<leader>tr", neotest.run.run, { desc = "Neotest: [r]un nearest test" })
 map(
 	"n",
 	"<leader>tf",
@@ -114,3 +114,7 @@ map(
 )
 map("n", "<leader>ts", "<cmd>Neotest summary<CR>", { desc = "Neotest: [s]ummary" })
 map("n", "<leader>to", "<cmd>Neotest output<CR>", { desc = "Neotest: [o]utput" })
+
+-- Quickfix
+map("n", "<S-j>", "<cmd>cnext<CR>", { desc = "Quickfix: next" })
+map("n", "<S-k>", "<cmd>cprev<CR>", { desc = "Quickfix: previous" })

@@ -4,7 +4,6 @@ return {
 		"Saghen/blink.cmp",
 	},
 	config = function()
-		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		vim.lsp.config["luals"] = {
 			cmd = { "lua-language-server" },
 			filetypes = { "lua" },
@@ -27,6 +26,15 @@ return {
 				},
 			},
 		}
+		vim.lsp.config["ty"] = {
+			settings = {
+				ty = {
+					diagnosticMode = "workspace",
+					showSyntaxErrors = false,
+				},
+			},
+		}
+
 		vim.lsp.enable({ "luals", "ty", "ruff", "postgres_lsp" })
 	end,
 }
