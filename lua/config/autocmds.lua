@@ -41,17 +41,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -- 	desc = "LSP: Disable hover capability from Ruff",
 -- })
 
-vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
-	desc = "Update Neo-tree's git status in context shift",
-	group = vim.api.nvim_create_augroup("NeoTreeGitRefresh", { clear = true }),
-	callback = function()
-		local success, git_status = pcall(require, "neo-tree.sources.git_status")
-
-		if success then
-			git_status.refresh()
-		end
-	end,
-})
+-- vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
+-- 	desc = "Update Neo-tree's git status in context shift",
+-- 	group = vim.api.nvim_create_augroup("NeoTreeGitRefresh", { clear = true }),
+-- 	callback = function()
+-- 		local success, git_status = pcall(require, "neo-tree.sources.git_status")
+--
+-- 		if success then
+-- 			git_status.refresh()
+-- 		end
+-- 	end,
+-- })
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("my.lsp", {}),

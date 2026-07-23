@@ -27,9 +27,6 @@ require("utils.terminal")
 map({ "n", "t" }, "<A-t>", ToggleTerminal, { desc = "Terminal: [T]oggle window" })
 map("t", "<Esc>", "<C-\\><C-n>", { desc = "Terminal: [E]xit insert mode" })
 
--- Neotree
-map("n", "<leader>e", "<cmd>Neotree filesystem reveal toggle<CR>", { desc = "Toggle Neotree" })
-
 -- Diagnostic
 map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
@@ -78,7 +75,7 @@ map("n", "<leader>fs", builtin.git_status, { desc = "Telescope: git [s]tatus" })
 map("n", "<leader>fB", builtin.git_branches, { desc = "Telescope: git [B]ranches" })
 map("n", "<leader>fn", function()
 	builtin.find_files({ cwd = vim.fn.stdpath("config") })
-end, { desc = "Search [N]eovim files" })
+end, { desc = "Telescope: [N]eovim files" })
 
 -- Nvim-dap
 local dap = require("dap")
