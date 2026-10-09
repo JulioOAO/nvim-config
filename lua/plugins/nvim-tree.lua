@@ -16,7 +16,14 @@ return {
 			hijack_netrw = true,
 		})
 
+		local api = require("nvim-tree.api")
+
+		local function opts(desc)
+			local bufnr = vim.api.nvim_get_current_buf()
+			return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+		end
 		-- Keymap to toggle the tree
 		vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>, { silent = true }")
+		vim.keymap.set("n", "<leader>v", api.node.open.vertical, opts("Open: Vertical Split"))
 	end,
 }
