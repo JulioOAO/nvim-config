@@ -5,6 +5,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.hl.on_yank()
 	end,
 })
+
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(args)
 		local bufnr = args.buf
@@ -60,5 +61,22 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		if client:supports_method("textDocument/completion") then
 			vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
 		end
+	end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "mermaid",
+	callback = function()
+		local buf = vim.api.nvim_get_current_buf()
+		vim.keymap.set("n", "<leader>mp", "<cmd>MermaidPreview<CR>", { buffer = buf, desc = "Mermaid Preview" })
+		vim.keymap.set("n", "<leader>mf", "<cmd>MermaidFormat<CR>", { buffer = buf, desc = "Mermaid Format" })
+		vim.keymap.set("n", "<leader>mr", "<cmd>MermaidRender<CR>", { buffer = buf, desc = "Mermaid Render" })
+		vim.keymap.set("n", "<leader>mc", "<cmd>MermaidCopyURL<CR>", { buffer = buf, desc = "Mermaid Copy URL" })
+		vim.keymap.set(
+			"n",
+			"<leader>mx",
+			"<cmd>MermaidPreviewStop<CR>",
+			{ buffer = buf, desc = "Mermaid Stop Preview" }
+		)
 	end,
 })
