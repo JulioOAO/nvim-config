@@ -35,6 +35,6 @@ return {
 			},
 		}
 
-		vim.lsp.enable({ "luals", "ty", "ruff", "postgres_lsp" })
+		vim.lsp.enable({ "luals", "ty", "ruff", "postgres_lsp", "plantuml_lsp" })
 	end,
 }
