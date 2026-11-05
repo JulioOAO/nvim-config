@@ -18,8 +18,14 @@ local getid = fun.win_getid
 ---@return nil
 local function openTerminal()
 	if not te_buf or fun.bufexists(te_buf) ~= 1 then
+		local buf_dir = fun.expand("%:p:h")
+		if buf_dir == "" then
+			buf_dir = fun.getcwd()
+		end
 		cmd("au TermOpen * setlocal nonumber norelativenumber signcolumn=no")
-		cmd("sp | winc J | res 10 | te")
+		cmd("sp | winc J | res 10")
+		cmd("lcd " .. fun.fnameescape(buf_dir))
+		cmd("te")
 		te_win_id = getid()
 		te_buf = fun.bufnr("%")
 	elseif te_win_id and gotoid(te_win_id) ~= 1 then

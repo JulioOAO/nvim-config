@@ -115,3 +115,6 @@ map("n", "<leader>to", "<cmd>Neotest output<CR>", { desc = "Neotest: [o]utput" }
 -- Quickfix
 map("n", "<S-j>", "<cmd>cnext<CR>", { desc = "Quickfix: next" })
 map("n", "<S-k>", "<cmd>cprev<CR>", { desc = "Quickfix: previous" })
+
+-- Oil.nvim
+map("n", "<leader>e", "<cmd>Oil --float<CR>", { desc = "Oil: Op[e]n parent directory" })
