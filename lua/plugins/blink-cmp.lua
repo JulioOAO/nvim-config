@@ -25,7 +25,11 @@ return {
 		-- C-k: Toggle signature help (if signature.enabled = true)
 		--
 		-- See :h blink-cmp-config-keymap for defining your own keymap
-		keymap = { preset = "default" },
+		keymap = {
+			preset = "default",
+			["<C-n>"] = { "show", "select_next", "fallback" },
+			["<C-p>"] = { "show", "select_prev", "fallback" },
+		},
 
 		appearance = {
 			-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
@@ -37,11 +41,11 @@ return {
 		completion = {
 			list = {
 				selection = {
-					-- preselect = false,
-					-- auto_insert = false,
+					preselect = true,
+					auto_insert = false,
 				},
 			},
-			documentation = { auto_show = false },
+			documentation = { auto_show = true },
 			menu = {
 				draw = {
 					treesitter = { "lsp" },

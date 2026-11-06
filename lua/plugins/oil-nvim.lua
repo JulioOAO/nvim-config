@@ -14,7 +14,7 @@ return {
 			["<leader>h"] = { "actions.select", opts = { horizontal = true } },
 			["<leader>t"] = { "actions.select", opts = { tab = true } },
 			["<leader>p"] = "actions.preview",
-			["<leader>c"] = { "actions.close", mode = "n" },
+			["<C-c>"] = { "actions.close", mode = "n" },
 			["<leader>l"] = "actions.refresh",
 			["-"] = { "actions.parent", mode = "n" },
 			["_"] = { "actions.open_cwd", mode = "n" },
